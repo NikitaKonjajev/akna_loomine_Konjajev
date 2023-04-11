@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1234244e-2b1f-4815-90e6-d72bb2b17efb</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>akna_loomine_Konjajev.py</StartupFile>
+    <StartupFile>module1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,11 +22,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="akna_loomine_Konjajev.py" />
+    <Compile Include="module1.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="stiv.png" />
     <Content Include="stiv1.png" />
     <Content Include="stiv2.png" />
+    <Content Include="sun2.jpg" />
+    <Content Include="сон.jpg" />
+    <Content Include="сон2.jpg" />
+    <Content Include="сон3.jpg" />
+    <Content Include="сон5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
