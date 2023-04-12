@@ -10,9 +10,9 @@ pygame.display.flip()
 
 font=pygame.font.SysFont("Alganian",40)
 sõnad="Nii ilus maja"
-värv=[250, 0, 0]
+värv=[0, 0, 0]
 teksti_lisanime=font.render(sõnad,False,värv)
-ekraani_pind.blit(teksti_lisanime,(30,280))
+ekraani_pind.blit(teksti_lisanime,(80,320))
 
 pilt=pygame.image.load("stiv2.png")
 ekraani_pind.blit(pilt,(20,310))

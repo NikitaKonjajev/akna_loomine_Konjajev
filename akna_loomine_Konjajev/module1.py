@@ -23,6 +23,9 @@ pind.fill(fon)
 
 Maja(100,400,300,400,pind,majavarv)
 
+ristkülik=pygame.Rect(120,217,80,80)
+pygame.draw.rect(pind,(255, 255, 255),ristkülik)
+
 for i in range(10):
     varv=[r,g,b]
     r=random.randint(0,255)

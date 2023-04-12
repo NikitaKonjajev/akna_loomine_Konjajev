@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1234244e-2b1f-4815-90e6-d72bb2b17efb</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>2osa.py</StartupFile>
+    <StartupFile>module1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
