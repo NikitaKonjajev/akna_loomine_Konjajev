@@ -1,68 +1,49 @@
-﻿import pygame
-pygame.init()
-ekraani_pind=pygame.display.set_mode((300,300))
-ekraani_pind.fill((0, 191, 255))
-pygame.display.set_caption("Lumemees - Nikita Konjajev")
+import pygame
+import random 
+import sys
 
+def Maja(x,y,laius,kõrgus,pind,värv):
+    punktid=[(x,y-((3/4.0)*kõrgus)), (x,y), (x+laius,y), (x+laius,y-(3/4.0)*(kõrgus)),(x,y-((3/4.0)*kõrgus)), (x+laius/2.0,y-kõrgus),(x+laius,y-(3/4.0)*kõrgus)]
 
-#шары
-lill=pygame.Rect(110,178,100,100)
-pygame.draw.ellipse(ekraani_pind,(255,255,255),lill)
-lill=pygame.Rect(118,110,75,75)
-pygame.draw.ellipse(ekraani_pind,(255,255,255),lill)
-lill=pygame.Rect(129,63,50,50)
-pygame.draw.ellipse(ekraani_pind,(255,255,255),lill)
+    suurus=random.randint(1,10)
+    pygame.draw.lines(pind,värv,False,punktid,suurus)
 
-#глаза
-lill=pygame.Rect(140,80,5,5)
-pygame.draw.ellipse(ekraani_pind,(255, 0, 0),lill)
-lill=pygame.Rect(160,80,5,5)
-pygame.draw.ellipse(ekraani_pind,(255, 0, 0),lill)
+r=random.randint(0,255)
+g=random.randint(0,255)
+b=random.randint(0,255)
+fon=[r,g,b]
 
-#пуговицы 2
-lill=pygame.Rect(148,130,12,12)
-pygame.draw.ellipse(ekraani_pind,(0,0,0),lill)
-lill=pygame.Rect(148,150,12,12)
-pygame.draw.ellipse(ekraani_pind,(0,0,0),lill)
+r=random.randint(0,255)
+g=random.randint(0,255)
+b=random.randint(0,255)
+majavarv=[r,g,b]
+pind=pygame.display.set_mode([640,480])
+pygame.display.set_caption("Juhustikudobjektid")
+pind.fill(fon) 
 
-#пуговицы 3
-lill=pygame.Rect(152,200,12,12)
-pygame.draw.ellipse(ekraani_pind,(0,0,0),lill)
-lill=pygame.Rect(152,220,12,12)
-pygame.draw.ellipse(ekraani_pind,(0,0,0),lill)
-lill=pygame.Rect(152,240,12,12)
-pygame.draw.ellipse(ekraani_pind,(0,0,0),lill)
+Maja(100,400,300,400,pind,majavarv)
 
-#нос
-pygame.draw.polygon(ekraani_pind,(255, 69, 0),[(151, 89), (146, 100), (158, 100)])
+for i in range(10):
+    varv=[r,g,b]
+    r=random.randint(0,255)
+    g=random.randint(0,255)
+    b=random.randint(0,255)
+    #suurus
+    laius=random.randint(1,80)
+    kõrgus=random.randint(1,80)
+    #asukoht
+    x=random.randint(0,640-laius)
+    y=random.randint(0,480-kõrgus)
+    pygame.draw.rect(pind,varv,[x,y,laius,kõrgus])
 
-#руки
-lill=pygame.Rect(95,130,25,25)
-pygame.draw.ellipse(ekraani_pind,(255, 255, 255),lill)
-lill=pygame.Rect(190,130,25,25)
-pygame.draw.ellipse(ekraani_pind,(255, 255, 255),lill)
-#ноги
-lill=pygame.Rect(110,260,30,30)
-pygame.draw.ellipse(ekraani_pind,(255,255,255),lill)
-lill=pygame.Rect(180,260,30,30)
-pygame.draw.ellipse(ekraani_pind,(255,255,255),lill)
-
-#шляпа
-lill=pygame.Rect(120, 45, 70, 20)
-pygame.draw.rect(ekraani_pind, (139, 69, 19),lill)
-
-pilt=pygame.image.load("сон5.png")
-ekraani_pind.blit(pilt,(20,20))
-pygame.display.flip()
-
-font=pygame.font.SysFont("Alganian",15)
-sõnad="А где снег?"
-värv=[0,0,0]
-teksti_lisanime=font.render(sõnad,False,värv)
-ekraani_pind.blit(teksti_lisanime,(50,25))
-
+    
+    pygame.display.flip()
 while True:
     event=pygame.event.poll()
     if event.type==pygame.QUIT:
         break
 pygame.quit()
+
+
+
+

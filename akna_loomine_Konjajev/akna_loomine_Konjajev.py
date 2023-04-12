@@ -26,7 +26,7 @@ font=pygame.font.SysFont("Alganian",40)
 sõnad="Где мои алмазы??"
 värv=[0, 0, 0]
 teksti_lisanime=font.render(sõnad,False,värv)
-ekraani_pind.blit(teksti_lisanime,(258,250))
+ekraani_pind.blit(teksti_lisanime,(50,50))
 
 pygame.display.flip()
 while True:
