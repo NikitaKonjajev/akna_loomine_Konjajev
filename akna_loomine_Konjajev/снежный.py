@@ -5,7 +5,7 @@ ekraani_pind.fill((0, 191, 255))
 pygame.display.set_caption("Lumemees - Nikita Konjajev")
 
 font=tekst=pygame.font.SysFont("Alganian",40)
-sõnad="Где снег?"
+sõnad="Kus lumi on?"
 värv=[0,0,0]
 teksti_lisamine=font.render(sõnad,False,värv)
 ekraani_pind.blit(teksti_lisamine,(150,10))
