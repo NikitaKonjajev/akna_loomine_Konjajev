@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1234244e-2b1f-4815-90e6-d72bb2b17efb</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>module1.py</StartupFile>
+    <StartupFile>еще часть.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="akna_loomine_Konjajev.py" />
-    <Compile Include="module1.py" />
+    <Compile Include="еще часть.py" />
     <Compile Include="снежный.py" />
     <Compile Include="2osa.py" />
   </ItemGroup>
