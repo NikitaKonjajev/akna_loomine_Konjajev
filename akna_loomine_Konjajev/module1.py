@@ -23,8 +23,21 @@ pind.fill(fon)
 
 Maja(100,400,300,400,pind,majavarv)
 
-ristkülik=pygame.Rect(120,217,80,80)
-pygame.draw.rect(pind,(255, 255, 255),ristkülik)
+370,300,15,15
+ristkülik=pygame.Rect(297,217,100,180)                            
+pygame.draw.rect(pind,(255,255,255),ristkülik) #дверь
+
+ristkülik=pygame.Rect(370,300,15,15)                            
+pygame.draw.rect(pind,(0,0,0),ristkülik)#ручка
+
+ristkülik=pygame.Rect(120,165,100,100)                            
+pygame.draw.rect(pind,(255,255,0),ristkülik) #bg okna
+
+ristkülik=pygame.Rect(167,165,6,100)                            
+pygame.draw.rect(pind,(0,0,0),ristkülik) #okno x
+
+ristkülik=pygame.Rect(120,212,100,6)                            
+pygame.draw.rect(pind,(0,0,0),ristkülik) #okno y
 
 for i in range(10):
     varv=[r,g,b]
