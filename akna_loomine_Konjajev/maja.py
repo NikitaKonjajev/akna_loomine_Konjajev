@@ -15,7 +15,7 @@ def Uks(x,y,laius,kõrgus,pind,värv):
     pygame.draw.lines(pind,värv,True,punktid,suurus)
 
 def aken(x,y,laius,kõrgus,pind,värv):
-    punktid=[(x,y),(x,y+(1/4)*kõrgus),(x-(1/6)*laius,y+(1/4)*kõrgus),(x-(1/6)*laius,y),(x,y)]
+    punktid=[(x,y),(x,y-kõrgus),(x+laius,y-kõrgus),(x+laius,y),(x,y)]
 
     suurus=random.randint(1,10)
     pygame.draw.lines(pind,värv,True,punktid,suurus)
@@ -37,7 +37,7 @@ pind.fill(fon)
 
 Maja(100,400,300,400,pind,majavarv)
 Uks(100,400,300,400,pind,majavarv)
-aken(100,400,300,400,pind,majavarv)
+aken(250,250,100,100,pind,majavarv)
 pygame.display.flip()
 
 """ старое окно и дверь 
