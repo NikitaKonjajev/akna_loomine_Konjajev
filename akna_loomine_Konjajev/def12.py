@@ -1,4 +1,4 @@
-def anim(posX, posY, sammX, sammY, X, Y, mesilane): #сам код из кода Марины
+def anim(posX, posY, sammX, sammY, X, Y, mesilane): 
     if posX == 0 and posY == 0:
         sammX = 1
         sammY = 0
@@ -25,4 +25,21 @@ def anim2(posX, posY, sammX, sammY, X, Y, mesilane):
         sammX = -sammX
     if posY >= Y - mesilane.get_rect().height or posY < 0:
         sammY = -sammY
+    return posX, posY, sammX, sammY
+
+def anim05(posX,posY,sammX,sammY,X,Y,mesilane):
+    if posX == X - mesilane.get_rect().width and posY <= Y - mesilane.get_rect().height:
+        sammX = 0
+        sammY = 1
+    elif posX <= 0 and posY <= Y - mesilane.get_rect().height:
+        sammX = -1
+        sammY = 0
+    elif posX <= 0 and posY <= 0:
+        sammX = 0
+        sammY = -1
+    elif posX <= X - mesilane.get_rect().width and posY <= 0:
+        sammX = 1
+        sammY = 0
+    posX += sammX
+    posY += sammY
     return posX, posY, sammX, sammY

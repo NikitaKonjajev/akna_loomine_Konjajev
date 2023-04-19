@@ -22,7 +22,7 @@ posY=Y-mesilane.get_rect().height
 lõpp=False
 
 while True:
-    valik=input("Vali pildi number  1 voi 2: ")
+    valik=input("Vali pildi number  1 või 2 voi 3: ")
     if valik=="1":
         sammX=0
         sammY=0
@@ -53,6 +53,23 @@ while True:
             ekraan.fill(roheline)
         pygame.quit()
         break
+    elif valik == "3":
+        sammX=0
+        sammY=0
+        while not lõpp:
+            kell.tick(60)
+            event=pygame.event.get()
+            for i in pygame.event.get():
+                if i.type==pygame.QUIT():
+                    sys.exit()
+            posX,posY,sammX,sammY=anim05(posX,posY,sammX,sammY,X,Y,mesilane)
+            ekraan.blit(mesilane,(posX,posY))
+            pygame.display.flip()
+            ekraan.fill(roheline)
+        pygame.quit()
+        break       
+      
+
     else:
         print("Sa valisid ebakorrektse väärtuse")
 
