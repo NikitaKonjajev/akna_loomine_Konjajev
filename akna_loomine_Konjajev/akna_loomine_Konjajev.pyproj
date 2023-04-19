@@ -24,6 +24,7 @@
     <Compile Include="akna_loomine_Konjajev.py" />
     <Compile Include="maja.py" />
     <Compile Include="animeerimine.py" />
+    <Compile Include="def12.py" />
     <Compile Include="снежный.py" />
     <Compile Include="2osa.py" />
   </ItemGroup>
