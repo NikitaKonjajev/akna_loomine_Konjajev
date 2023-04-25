@@ -11,7 +11,7 @@ lBlue = [153, 204, 255]
 screenX = 640
 screenY = 480
 screen=pygame.display. set_mode([screenX, screenY])
-pygame.display.set_caption("ping-pong")
+pygame.display.set_caption("surface")
 screen.fill(lBlue)
 clock=pygame.time.Clock()
 posX,posY=0,0
@@ -26,7 +26,7 @@ playerImage = pygame.transform.scale(playerImage, [player.width, player.height])
 enemies = []
 for i in range(5):
     enemies.append(pygame.Rect(random.randint(0, screenX - 100), random.randint(0, screenY - 100), 60, 73))
-enemyImage = pygame.image.load('sarik2.png')
+enemyImage = pygame.image.load('sarik.png')
 enemyImage = pygame.transform.scale(enemyImage, [enemies[0].width, enemies[0].height])
 
 enemyCounter = 0

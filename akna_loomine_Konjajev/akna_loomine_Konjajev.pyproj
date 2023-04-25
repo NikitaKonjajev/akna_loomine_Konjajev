@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1234244e-2b1f-4815-90e6-d72bb2b17efb</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>5osa.py</StartupFile>
+    <StartupFile>pingpong.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -32,9 +32,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bg.png" />
-    <Content Include="sarik.png" />
-    <Content Include="sarik1.png" />
-    <Content Include="sarik2.png" />
+    <Content Include="bortik1.png" />
+    <Content Include="sarik3.png" />
     <Content Include="stiv2.png" />
     <Content Include="123.png" />
   </ItemGroup>
