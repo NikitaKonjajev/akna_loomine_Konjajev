@@ -56,7 +56,7 @@ while True:
             ekraan.fill(roheline)
         pygame.quit()
         break
-    elif valik == "3":
+    elif valik=="3":
         sammX=0
         sammY=0
         while not lõpp:
