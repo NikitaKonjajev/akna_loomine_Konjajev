@@ -8,7 +8,7 @@ punane=[255,0,0]
 hall=[200,200,200]
 roosa=[255,150,255]
 roheline=[100,255,100]
-
+samm = 2
 #ekraani suurus
 X=640
 Y=480
@@ -22,7 +22,10 @@ posY=Y-mesilane.get_rect().height
 lõpp=False
 
 while True:
-    valik=input("Vali pildi number  1 või 2 voi 3: ")
+    print("1-päripäeva")
+    print("2-erinevates suundades")
+    print("3-vastupäeva")
+    valik=input("Kirjuta number, mis teeb su tegevuse: ")
     if valik=="1":
         sammX=0
         sammY=0
@@ -62,7 +65,7 @@ while True:
             for i in pygame.event.get():
                 if i.type==pygame.QUIT():
                     sys.exit()
-            posX,posY,sammX,sammY=anim05(posX,posY,sammX,sammY,X,Y,mesilane)
+            posX,posY,sammX,sammY=anim05(posX,posY,sammX,sammY,X,Y,mesilane,samm)
             ekraan.blit(mesilane,(posX,posY))
             pygame.display.flip()
             ekraan.fill(roheline)
