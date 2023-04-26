@@ -60,13 +60,15 @@ while not gameover:
     if posY > screenY-playerImage.get_rect().height or posY < 0:
         speedY = -speedY
 
-
+    if player.colliderect(pygame.Rect(150, -80, 340, 80)) or player.colliderect(pygame.Rect(150, 368, 340, 80)):
+        score += 1
 
     for enemy in enemies[:]:
             if player.colliderect(enemy):
                 enemies.remove(enemy)
                 score += 1
             print(score)
+
     for enemy in enemies:
         screen.blit(enemyImage,enemy)
 
