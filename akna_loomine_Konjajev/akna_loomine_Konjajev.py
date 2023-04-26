@@ -10,8 +10,7 @@ pygame.draw.rect(ekraani_pind,(0, 255, 0),ristkülik)
 ristkülik=pygame.Rect(50,217,230,150)
 pygame.draw.rect(ekraani_pind,(139, 69, 19),ristkülik)
 
-jalg=pygame.Rect(490,200,30,200)
-pygame.draw.rect(ekraani_pind,(139, 69, 19),jalg)
+
 
 ristkülik=pygame.Rect(450,200,110,130)
 pygame.draw.rect(ekraani_pind,(0, 128, 0),ristkülik)

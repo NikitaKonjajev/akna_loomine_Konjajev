@@ -7,7 +7,6 @@ blue = [6, 6, 255]
 pink = [255, 153, 255]
 lGreen = [153, 255, 153]
 lBlue = [153, 204, 255]
-
 screenX = 640
 screenY = 480
 screen=pygame.display. set_mode([screenX, screenY])
@@ -17,20 +16,16 @@ clock=pygame.time.Clock()
 posX,posY=0,0
 speedX,speedY=3,4
 
-    #player
+#player
 player = pygame.Rect(posX, posY, 120, 120)
 playerImage = pygame.image.load("sarik3.png")
 
 #enemy - tekitame 5 suvalist vaenlast
 enemies = []
-
 enemyImage = pygame.image.load('sarik3.png')
-
-
 enemyCounter = 0
 totalenemies = 20
 score = 0
-
 gameover=False
 while not gameover:
     clock. tick(60)
@@ -40,16 +35,18 @@ while not gameover:
         break
     player = pygame.Rect(posX, posY, 120, 140)
     screen. blit(playerImage, player)
-
-
     #левый борт
     pilt=pygame.image.load("bortik1.png")
     screen.blit(pilt,(150,-80))
     pygame.display.flip()
     #правый борт
-    pilt=pygame.image.load("bortik1.png")
-    screen.blit(pilt,(150,368))
-    pygame.display.flip()
+
+
+    jalg=pygame.Rect(490,200,30,200)
+    pygame.draw.rect(screen,(139, 69, 19),jalg)
+
+
+
 
     posX+=speedX
     posY+=speedY
@@ -59,9 +56,6 @@ while not gameover:
 
     if posY > screenY-playerImage.get_rect().height or posY < 0:
         speedY = -speedY
-
-    if player.colliderect(pygame.Rect(150, -80, 340, 80)) or player.colliderect(pygame.Rect(150, 368, 340, 80)):
-        score += 1
 
     for enemy in enemies[:]:
             if player.colliderect(enemy):
