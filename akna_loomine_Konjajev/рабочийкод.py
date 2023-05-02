@@ -1,4 +1,5 @@
-﻿import pygame, random
+﻿
+import pygame, random
 pygame.init()
 
 red = [255, 0, 0]
@@ -45,25 +46,26 @@ while not gameover:
     scoreText = font.render("Ваш счет " + str(score), True, green)
     screen.blit(scoreText, (10, 10))
 
-    #низ борт
-    ristkülik1=pygame.Rect(230,470,180,7)
-    pygame.draw.rect(screen,(0,0,0),ristkülik1)
-
     #вверхний борт
-    ristkülik2=pygame.Rect(230,5,180,7)
-    pygame.draw.rect(screen,(0,0,0),ristkülik2)
+    pilt=pygame.image.load("bortik1.png")
+    screen.blit(pilt,(150,-80))
 
+    #низ борт
+    pilt=pygame.image.load("bortik1.png")
+    screen.blit(pilt,(150,368))
+
+    pygame.display.flip()
 
     # Check collision with borders
     if posX > screenX - playerImage.get_rect().width or posX < 0:
         speedX = -speedX
-        if posY > 10 and posY < 110:
+        if posX > 150 and posX < 368:
             score += 1
         print(score)
 
     if posY > screenY - playerImage.get_rect().height or posY < 0:
         speedY = -speedY
-        if posX > 230 and posX < 410:
+        if posX > 150 and posX < 290:
             score += 1
         print(score)
 
