@@ -1,7 +1,6 @@
 ﻿import pygame, random
 pygame.init()
 
-
 red = [255, 0, 0]
 green = [0, 255, 0]
 blue = [6, 6, 255]
@@ -18,8 +17,9 @@ clock=pygame.time.Clock()
 posX,posY=0,0
 speedX,speedY=3,4
 
-def my(score):
-    value=screen.render("Vash s4et: "+str(score),True)dis.blit(value,[0,0])
+# Create font object for score display
+font = pygame.font.Font(None, 36)
+
 #player
 player = pygame.Rect(posX, posY, 120, 120)
 playerImage = pygame.image.load("sarik3.png")
@@ -31,6 +31,7 @@ enemyCounter = 0
 totalenemies = 20
 score = 0
 gameover=False
+
 while not gameover:
     clock.tick(60)
     #mangu sulgemine ristist
@@ -39,12 +40,16 @@ while not gameover:
         break
     player = pygame.Rect(posX, posY, 120, 140)
     screen.blit(playerImage, player)
-    
-    #левый борт
+
+    # Create score text and blit onto screen
+    scoreText = font.render("Ваш счет " + str(score), True, green)
+    screen.blit(scoreText, (10, 10))
+
+    #вверхний борт
     pilt=pygame.image.load("bortik1.png")
     screen.blit(pilt,(150,-80))
-    
-    #правый борт
+
+    #низ борт
     pilt=pygame.image.load("bortik1.png")
     screen.blit(pilt,(150,368))
 
@@ -53,10 +58,10 @@ while not gameover:
     # Check collision with borders
     if posX > screenX - playerImage.get_rect().width or posX < 0:
         speedX = -speedX
-        if posY > 150 and posY < 368:
+        if posX > 150 and posX < 368:
             score += 1
         print(score)
-    
+
     if posY > screenY - playerImage.get_rect().height or posY < 0:
         speedY = -speedY
         if posX > 150 and posX < 290:
@@ -80,3 +85,4 @@ print(score)
 if score == 20:
     gameover = True
 pygame.quit()
+
