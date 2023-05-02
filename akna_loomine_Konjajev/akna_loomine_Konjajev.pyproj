@@ -27,6 +27,7 @@
     <Compile Include="def12.py" />
     <Compile Include="5osa.py" />
     <Compile Include="6osa.py" />
+    <Compile Include="hiir.py" />
     <Compile Include="pingpong.py" />
     <Compile Include="снежный.py" />
     <Compile Include="2osa.py" />
