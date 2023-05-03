@@ -16,15 +16,17 @@ screen.fill(lBlue)
 clock=pygame.time.Clock()
 posX,posY=0,0
 speedX,speedY=3,4
+# задаем начальное положение и скорость для ristkülik1
+ristkülik1_x, ristkülik1_y = 230, 470
+ristkülik1_speed = 30
 
-# Create font object for score display
+# чтобы выводился счет
 font = pygame.font.Font(None, 36)
 
-#player
-player = pygame.Rect(posX, posY, 120, 120)
+#мячик/игрок
 playerImage = pygame.image.load("sarik3.png")
 
-#enemy - tekitame 5 suvalist vaenlast
+#мачик/игрок и очки
 enemies = []
 enemyImage = pygame.image.load('sarik3.png')
 enemyCounter = 0
@@ -33,28 +35,36 @@ score = 0
 gameover=False
 
 while not gameover:
-    clock.tick(60)
-    #mangu sulgemine ristist
-    event = pygame.event.poll()
-    if event.type==pygame.QUIT:
-        break
-    player = pygame.Rect(posX, posY, 120, 140)
-    screen.blit(playerImage, player)
+    clock.tick(100)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            gameover=True
+        elif event.type==pygame.KEYDOWN:
+            if event.key==pygame.K_LEFT:
+                ristkülik1_x -= ristkülik1_speed
+            elif event.key==pygame.K_RIGHT:
+                ristkülik1_x += ristkülik1_speed
+    # двигаем ristkülik1 влево или вправо
+    if ristkülik1_x < 0:
+        ristkülik1_x = 0 # останавливаем ristkülik1 на левом краю экрана
+    elif ristkülik1_x + 180 > screenX:
+        ristkülik1_x = screenX - 180 # останавливаем ristkülik1 на правом краю экрана
 
-    # Create score text and blit onto screen
+    # вывод счета на экран
     scoreText = font.render("Ваш счет " + str(score), True, green)
     screen.blit(scoreText, (10, 10))
 
     #низ борт
-    ristkülik1=pygame.Rect(230,470,180,7)
+    ristkülik1=pygame.Rect(ristkülik1_x, ristkülik1_y, 180, 7)
     pygame.draw.rect(screen,(0,0,0),ristkülik1)
 
     #вверхний борт
     ristkülik2=pygame.Rect(230,5,180,7)
     pygame.draw.rect(screen,(0,0,0),ristkülik2)
 
-
-    # Check collision with borders
+    player = pygame.Rect(posX, posY, 120, 140)
+    screen.blit(playerImage, player)
+    # проверка на очки
     if posX > screenX - playerImage.get_rect().width or posX < 0:
         speedX = -speedX
         if posY > 10 and posY < 110:
@@ -67,7 +77,7 @@ while not gameover:
             score += 1
         print(score)
 
-    # Update ball position
+    # чтобы мячик катался
     posX += speedX
     posY += speedY
 

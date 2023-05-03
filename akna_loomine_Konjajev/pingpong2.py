@@ -52,17 +52,21 @@ speedY=0
 
 speedY2 =0 #
 
-speedX3, speedY3 = 3, 4 ##
+speedX3, speedY3 = 3, 3 ##
 
 directionY=0 
 
 directionY2= 0 #
-player = pygame.Rect(posX3, posY3, 110, 60)
+player = pygame.Rect(posX3, posY3, 80, 40)
 playerImage = pygame.image.load("sarik3.png")
 playerImage = pygame.transform.scale(playerImage, [player.width, player.height])
 posX3=screenX-playerImage.get_rect().width
 posY3=screenY-playerImage.get_rect().height
 
+enemies = []
+enemyCounter = 0
+totalenemies = 20
+score = 0
 gameover=False
 
 while not gameover:
@@ -77,21 +81,12 @@ while not gameover:
             elif event.key==pygame.K_DOWN:
                 directionY="move_down"
                 
-            elif event.key==pygame.K_w:
-                directionY2="K_w"
-       
-            elif event.key==pygame.K_s:
-                directionY2="K_s"
-                
-
-
         elif event.type==pygame.KEYUP:
              if event.key==pygame.K_UP or event.key==pygame.K_DOWN:
                  speedY=0
 
              if event.key==pygame.K_w or event.key==pygame.K_s:
                  speedY2=0
-
     if directionY=="move_up":
         if posY>0:
             posY-=3
@@ -99,16 +94,9 @@ while not gameover:
         if posY + 100 <screenY:
             posY+=3
 
-    if directionY2=="K_w":
-        if posY2>0:
-            posY2-=3
-    elif directionY2=="K_s":
-        if posY2 + 100 <screenY:
-            posY2+=3
 
 
-    ruut=pygame.draw.rect(screen,red,[610,posY,12,100],0,10)
-    ruut2=pygame.draw.rect(screen,blue,[20,posY2,12,100],0,10)
+
 
     events=pygame.event.get()
     for i in pygame.event.get():
@@ -116,11 +104,32 @@ while not gameover:
     liik()
 
 
-
+    if posX3 > screenX - playerImage.get_rect().width or posX3 < 0:
+        
+        if posY3 > 150 and posY3 < 368:
+            score += 1
+        print(score)
     
+    if posY3 > screenY - playerImage.get_rect().height or posY3 < 0:
+      
+        if posX3 > 150 and posX3 < 290:
+            score += 1
+        print(score)
     
 
+    for enemy in enemies[:]:
+        if player.colliderect(enemy):
+            enemies.remove(enemy)
+            score += 1
+            print(score)
 
+
+    ruut=pygame.draw.rect(screen,red,[610,posY,12,100],0,10)
+    ruut2=pygame.draw.rect(screen,blue,[20,posY2,12,100],0,10)
+
+print(score)
+if score == 20:
+    gameover = True
 
 
 
