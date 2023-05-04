@@ -19,6 +19,9 @@ speedX,speedY=3,4
 # задаем начальное положение и скорость для ristkülik1
 ristkülik1_x, ristkülik1_y = 230, 470
 ristkülik1_speed = 30
+# задаем начальное положение и скорость для ristkülik2
+ristkülik2_x, ristkülik2_y = 230, 5
+ristkülik2_speed = 30
 
 # чтобы выводился счет
 font = pygame.font.Font(None, 36)
@@ -44,11 +47,21 @@ while not gameover:
                 ristkülik1_x -= ristkülik1_speed
             elif event.key==pygame.K_RIGHT:
                 ristkülik1_x += ristkülik1_speed
+            elif event.key==pygame.K_a:
+                ristkülik2_x -= ristkülik2_speed
+            elif event.key==pygame.K_d:
+                ristkülik2_x += ristkülik2_speed
     # двигаем ristkülik1 влево или вправо
     if ristkülik1_x < 0:
         ristkülik1_x = 0 # останавливаем ristkülik1 на левом краю экрана
     elif ristkülik1_x + 180 > screenX:
         ristkülik1_x = screenX - 180 # останавливаем ristkülik1 на правом краю экрана
+
+    # двигаем ristkülik2 влево или вправо
+    if ristkülik2_x < 0:
+        ristkülik2_x = 0 # останавливаем ristkülik2 на левом краю экрана
+    elif ristkülik2_x + 180 > screenX:
+        ristkülik2_x = screenX - 180 # останавливаем ristkülik2 на правом
 
     # вывод счета на экран
     scoreText = font.render("Ваш счет " + str(score), True, green)
@@ -59,7 +72,7 @@ while not gameover:
     pygame.draw.rect(screen,(0,0,0),ristkülik1)
 
     #вверхний борт
-    ristkülik2=pygame.Rect(230,5,180,7)
+    ristkülik2=pygame.Rect(ristkülik2_x, ristkülik2_y, 180, 7)
     pygame.draw.rect(screen,(0,0,0),ristkülik2)
 
     player = pygame.Rect(posX, posY, 120, 140)
