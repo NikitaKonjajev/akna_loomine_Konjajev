@@ -15,7 +15,7 @@ pygame.display.set_caption("pingpong")
 screen.fill(lBlue)
 clock=pygame.time.Clock()
 posX,posY=0,0
-speedX,speedY=3,4
+speedX,speedY=2,2
 # задаем начальное положение и скорость для ristkülik1
 ristkülik1_x, ristkülik1_y = 230, 470
 ristkülik1_speed = 30
@@ -32,8 +32,6 @@ playerImage = pygame.image.load("sarik3.png")
 #мачик/игрок и очки
 enemies = []
 enemyImage = pygame.image.load('sarik3.png')
-enemyCounter = 0
-totalenemies = 20
 score = 0
 gameover=False
 
@@ -77,6 +75,7 @@ while not gameover:
 
     player = pygame.Rect(posX, posY, 120, 140)
     screen.blit(playerImage, player)
+
     # проверка на очки
     if posX > screenX - playerImage.get_rect().width or posX < 0:
         speedX = -speedX
