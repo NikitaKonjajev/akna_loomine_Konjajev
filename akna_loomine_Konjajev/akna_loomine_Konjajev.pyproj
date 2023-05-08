@@ -28,8 +28,8 @@
     <Compile Include="5osa.py" />
     <Compile Include="6osa.py" />
     <Compile Include="hiir.py" />
+    <Compile Include="класс1.py" />
     <Compile Include="рабочийкод.py" />
-    <Compile Include="pingpong2.py" />
     <Compile Include="pingpong.py" />
     <Compile Include="снежный.py" />
     <Compile Include="2osa.py" />
